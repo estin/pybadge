@@ -125,7 +125,9 @@ class Main(object):
     def index(self):
         badges = [
             "<li><img src=\"http://{}:{}/badge/pomp/{}\"></li>".format(
-                HOST_NAME, PORT, field
+                HOST_NAME,
+                80 if 'OPENSHIFT_PYTHON_DIR' in os.environ else PORT,
+                field,
             ) for field in FIELDS_MAP
         ]
         return 'Pomp pypi status: <ul>%s</ul>' % ''.join(badges)
