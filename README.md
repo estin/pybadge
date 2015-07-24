@@ -1,5 +1,5 @@
 # pipybadge
-simple cherrypy app for generating pypi badge urls via shields.io
+simple cherrypy app for generating pypi badge urls
 
 Openshift deploy http://badges-etatarkin.rhcloud.com/
 

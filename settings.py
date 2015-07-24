@@ -8,8 +8,11 @@ IS_OPENSHIFT = 'OPENSHIFT_PYTHON_DIR' in os.environ
 
 # Get the environment information we need to start the server
 IP = os.environ.get('OPENSHIFT_PYTHON_IP', '127.0.0.1')
-PORT = int(os.environ.get('OPENSHIFT_PYTHON_PORT', 5000))
+PORT = int(os.environ.get('OPENSHIFT_PYTHON_PORT', 5001))
 HOST_NAME = os.environ.get('OPENSHIFT_GEAR_DNS', 'localhost')
+
+CACHE_TTL = 5 * 60
+PYPI_URL_TMPL = 'https://pypi.python.org/pypi/{}/json'
 
 # if run at openshift - activate virtualenv
 if IS_OPENSHIFT:
